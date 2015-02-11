@@ -1,0 +1,8 @@
+*~
+*Thumbs.db
+*.DS_Store
+
+*.o
+
+# Godot-specific stuff:
+.fscache
