@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="8" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://sb.cube" type="CubeMap"></ext_resource>
+	<ext_resource path="res://scenes/common/sb.cube" type="CubeMap"></ext_resource>
+	<ext_resource path="res://scenes/common/tiles.res" type="MeshLibrary"></ext_resource>
 	<ext_resource path="res://pause_menu.gd" type="Script"></ext_resource>
-	<ext_resource path="res://tiles.res" type="MeshLibrary"></ext_resource>
-	<ext_resource path="res://coin.scn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://enemy.scn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://player.xml" type="PackedScene"></ext_resource>
+	<ext_resource path="res://entities/collectibles/coin/coin.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://entities/enemies/test_enemy/enemy.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://entities/players/player_standin/player.xml" type="PackedScene"></ext_resource>
 	<resource type="Environment" path="local://1">
 		<bool name="ambient_light/enabled"> True </bool>
 		<color name="ambient_light/color"> 0, 0.409429, 0.596681, 1 </color>
@@ -14,7 +14,7 @@
 		<int name="background/mode"> 4 </int>
 		<color name="background/color"> 0, 0, 0, 1 </color>
 		<nil name="background/texture">  </nil>
-		<resource name="background/cubemap" resource_type="CubeMap" path="res://sb.cube">  </resource>
+		<resource name="background/cubemap" resource_type="CubeMap" path="res://scenes/common/sb.cube">  </resource>
 		<real name="background/energy"> 1 </real>
 		<real name="background/scale"> 1 </real>
 		<real name="background/glow"> 0.6 </real>
@@ -204,9 +204,9 @@
 							<int> 3 </int>
 							<string> "sources" </string>
 							<array  len="4" shared="false">
-								<string> "res://player.gd" </string>
+								<string> "res://entities/players/player_standin/player.gd" </string>
 								<string> "res://follow_camera.gd" </string>
-								<string> "res://stage.gd" </string>
+								<string> "./stage.gd" </string>
 								<string> "res://pause_menu.gd" </string>
 							</array>
 						</dictionary>
@@ -326,7 +326,7 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "3D" </string>
 				</dictionary>
-				<resource  resource_type="MeshLibrary" path="res://tiles.res">  </resource>
+				<resource  resource_type="MeshLibrary" path="res://scenes/common/tiles.res">  </resource>
 				<bool> False </bool>
 				<real> 2 </real>
 				<int> 4 </int>
@@ -358,7 +358,7 @@
 					<string> "_editor_collapsed" </string>
 					<bool> True </bool>
 				</dictionary>
-				<resource  resource_type="PackedScene" path="res://coin.scn">  </resource>
+				<resource  resource_type="PackedScene" path="res://entities/collectibles/coin/coin.xscn">  </resource>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5311, 2.85075, 5.24675 </transform>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -369,7 +369,7 @@
 							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="1" shared="false">
-								<string> "res://coin.gd" </string>
+								<string> "res://entities/collectibles/coin/coin.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -513,7 +513,7 @@
 					<string> "_editor_collapsed" </string>
 					<bool> True </bool>
 				</dictionary>
-				<resource  resource_type="PackedScene" path="res://enemy.scn">  </resource>
+				<resource  resource_type="PackedScene" path="res://entities/enemies/test_enemy/enemy.xscn">  </resource>
 				<transform> 1, 0, 0, -0, 1, 0, 0, -0, 1, 17.9671, 4.52696, 5.27132 </transform>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -524,8 +524,8 @@
 							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="2" shared="false">
-								<string> "res://enemy.gd" </string>
-								<string> "res://player.gd" </string>
+								<string> "res://entities/enemies/test_enemy/enemy.gd" </string>
+								<string> "res://entities/players/player_standin/player.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -625,7 +625,7 @@
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1292, 5.40827, 17.1396 </transform>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1292, 5.40827, 32.6128 </transform>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5702, 5.40827, 32.6128 </transform>
-				<resource  resource_type="PackedScene" path="res://player.xml">  </resource>
+				<resource  resource_type="PackedScene" path="res://entities/players/player_standin/player.xml">  </resource>
 				<transform> 0.0160683, 0, -0.999871, 0, 1, 0, 0.999871, 0, 0.0160683, 8.27718, 3.1619, 13.9731 </transform>
 				<dictionary  shared="false">
 					<string> "_editor_collapsed" </string>
@@ -639,7 +639,7 @@
 							<string> "sources" </string>
 							<array  len="2" shared="false">
 								<string> "res://follow_camera.gd" </string>
-								<string> "res://player.gd" </string>
+								<string> "res://entities/players/player_standin/player.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>

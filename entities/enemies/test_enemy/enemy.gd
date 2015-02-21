@@ -38,7 +38,7 @@ func _integrate_forces(state):
 		var dp = state.get_contact_local_normal(i)
 	
 		if (cc):
-			if (cc extends preload("res://bullet.gd") and not cc.disabled):
+			if (cc extends preload("res://entities/players/player_standin/bullet.gd") and not cc.disabled):
 				set_mode(MODE_RIGID)
 				dying=true
 				#lv=s.get_contact_local_normal(i)*400  
