@@ -1,5 +1,5 @@
 
-extends RigidBody
+extends "res://entities/players/common/player_base.gd"
 
 
 
@@ -64,6 +64,8 @@ func adjust_facing(p_facing, p_target,p_step, p_adjust_rate,current_gn):
 
 
 func _integrate_forces( state ):
+	var weapon_transform = get_node("Armature/spear").get_transform()
+	
 	var lv = state.get_linear_velocity() # linear velocity
 	var g = state.get_total_gravity()
 	var delta = state.get_step()
@@ -116,16 +118,11 @@ func _integrate_forces( state ):
 	var shoot_attempt = Input.is_action_pressed("shoot")
 		
 	var target_dir = (dir - up*dir.dot(up)).normalized()
-	#var target_dir = (dir - up*dir.dot(up))
 	
 	if (onfloor):
 		var sharp_turn = hspeed > 0.1 and rad2deg(acos(target_dir.dot(hdir))) > sharp_turn_threshhold
 		if (dir.length()>0.1 and !sharp_turn) :
 			if (hspeed > 0.001) :
-				#linear_dir = linear_h_velocity/linear_vel
-				#if (linear_vel > brake_velocity_limit and linear_dir.dot(ctarget_dir)<-cos(Math::deg2rad(brake_angular_limit)))
-				#	brake=true
-				#else
 				hdir = adjust_facing(hdir,target_dir,delta,1.0/hspeed*turn_speed,up)
 				facing_dir = hdir
 			else:
@@ -202,13 +199,8 @@ func _integrate_forces( state ):
 			shoot_blend=0
 	
 	if (shoot_attempt and not prev_shoot):
-		shoot_blend = SHOOT_TIME		
-		var bullet = preload("./bullet.xscn").instance()
-		bullet.set_transform( get_node("Armature/bullet").get_global_transform().orthonormalized() )
-		get_parent().add_child( bullet )
-		bullet.set_linear_velocity( get_node("Armature/bullet").get_global_transform().basis[2].normalized() * 20 )
-		PS.body_add_collision_exception( bullet.get_rid(), get_rid() ) #add it to bullet
-		get_node("sfx").play("shoot")
+		shoot_blend = SHOOT_TIME
+		get_node("AnimationPlayer").play("thrust")
 		
 	prev_shoot = shoot_attempt
 	
@@ -217,7 +209,9 @@ func _integrate_forces( state ):
 		
 	get_node("AnimationTreePlayer").transition_node_set_current("state",anim)
 	get_node("AnimationTreePlayer").blend2_node_set_amount("gun",min(shoot_blend,1.0))
-#	state.set_angular_velocity(Vector3())	
+#	state.set_angular_velocity(Vector3())
+
+	get_node("Armature/spear").set_transform(weapon_transform)
 	
 	
 
@@ -233,5 +227,16 @@ func _ready():
 	get_node("AnimationTreePlayer").set_active(true)
 	set_process_input(true)
 	pass
+
+
+
+
+func _on_player_body_enter( body ):
+	if(body extends preload("res://entities/enemies/common/enemy_base.gd") && body.alive):
+		# take damage if we touch an enemy.
+		take_damage(1)
+
+
+
 
 

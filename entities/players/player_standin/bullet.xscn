@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="8" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://entities/players/player_standin/bullet.gd" type="Script"></ext_resource>
 	<ext_resource path="res://entities/common/shine.png" type="Texture"></ext_resource>
-	<ext_resource path="./bullet.gd" type="Script"></ext_resource>
 	<resource type="SphereShape" path="local://1">
 		<real name="radius"> 0.27 </real>
 
@@ -272,17 +272,18 @@
 				<real> 1 </real>
 				<real> 0 </real>
 				<vector3> 0, 0, 0 </vector3>
-				<resource  resource_type="Script" path="./bullet.gd">  </resource>
+				<resource  resource_type="Script" path="res://entities/players/player_standin/bullet.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
-							<array  len="1" shared="false">
-								<string> "./bullet.gd" </string>
+							<array  len="2" shared="false">
+								<string> "res://entities/players/player_standin/spear.gd" </string>
+								<string> "res://entities/enemies/test_enemy/enemy.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -399,7 +400,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<transform> 0.24972, 0, 0, 0, 0.24972, 0, 0, 0, 0.24972, 0.00159812, 0.0110106, 0.0045104 </transform>
 				<resource name=""></resource>				<resource  resource_type="Mesh" path="local://3">  </resource>

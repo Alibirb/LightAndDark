@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="2" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://gui/hud.gd" type="Script"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "names" </string>
+			<string_array  len="45">
+				<string> "hud_base" </string>
+				<string> "Spatial" </string>
+				<string> "_import_path" </string>
+				<string> "_import_transform" </string>
+				<string> "visibility/visible" </string>
+				<string> "script/script" </string>
+				<string> "__meta__" </string>
+				<string> "stats" </string>
+				<string> "Label" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/behind_parent" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "focus_neighbour/left" </string>
+				<string> "focus_neighbour/top" </string>
+				<string> "focus_neighbour/right" </string>
+				<string> "focus_neighbour/bottom" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/stretch_ratio" </string>
+				<string> "range/min" </string>
+				<string> "range/max" </string>
+				<string> "range/step" </string>
+				<string> "range/page" </string>
+				<string> "range/value" </string>
+				<string> "range/exp_edit" </string>
+				<string> "rounded_values" </string>
+				<string> "text" </string>
+				<string> "align" </string>
+				<string> "valign" </string>
+				<string> "autowrap" </string>
+				<string> "uppercase" </string>
+				<string> "percent_visible" </string>
+				<string> "dialog" </string>
+				<string> "Panel" </string>
+				<string> "anchor/left" </string>
+				<string> "anchor/top" </string>
+				<string> "anchor/right" </string>
+				<string> "anchor/bottom" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "help_text" </string>
+			</string_array>
+			<string> "version" </string>
+			<int> 1 </int>
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "node_count" </string>
+			<int> 6 </int>
+			<string> "variants" </string>
+			<array  len="27" shared="false">
+				<node_path> "" </node_path>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+				<bool> True </bool>
+				<resource  resource_type="Script" path="res://gui/hud.gd">  </resource>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 2 </int>
+							<string> "sources" </string>
+							<array  len="6" shared="false">
+								<string> "res://gui/hud.gd" </string>
+								<string> "res://entities/enemies/test_enemy/enemy.gd" </string>
+								<string> "res://entities/players/common/player_base.gd" </string>
+								<string> "res://entities/common/help_text_trigger.gd" </string>
+								<string> "res://entities/players/player_standin/player.gd" </string>
+								<string> "res://entities/enemies/common/enemy_base.gd" </string>
+							</array>
+						</dictionary>
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> False </bool>
+							<string> "zoom" </string>
+							<real> 0.9025 </real>
+							<string> "use_snap" </string>
+							<bool> False </bool>
+							<string> "ofs" </string>
+							<vector2> -268.484, -122.625 </vector2>
+							<string> "snap" </string>
+							<int> 10 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 25.364721 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> True </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 53.0163, -3.78156, -14.5769 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "Script" </string>
+				</dictionary>
+				<real> 1 </real>
+				<bool> False </bool>
+				<real> 40 </real>
+				<real> 13 </real>
+				<int> 2 </int>
+				<real> 0 </real>
+				<string> "Stats" </string>
+				<int> 0 </int>
+				<real> -1 </real>
+				<int> 3 </int>
+				<int> 1 </int>
+				<real> 160 </real>
+				<real> 129 </real>
+				<real> -202 </real>
+				<real> 16 </real>
+				<string> "Dialog text" </string>
+				<real> 202 </real>
+				<real> 126 </real>
+				<real> -255 </real>
+				<real> 85 </real>
+				<real> 0.692308 </real>
+				<string> "help text" </string>
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="324"> 				-1, -1, 1, 0, -1, 5, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 0, 0, 0, 8, 7, -1, 28, 2, 0, 4, 2, 9, 5, 10, 5, 11, 6, 12, 7, 13, 8, 14, 0, 15, 0, 16, 0, 17, 0, 18, 2, 19, 2, 20, 9, 21, 5, 22, 10, 23, 5, 24, 5, 25, 5, 26, 10, 27, 6, 28, 6, 29, 11, 30, 12, 31, 12, 32, 6, 33, 6, 34, 13, 0, 0, 0, 36, 35, -1, 22, 2, 0, 4, 6, 9, 5, 10, 5, 11, 6, 37, 14, 38, 15, 39, 14, 40, 15, 41, 16, 42, 17, 12, 18, 13, 5, 14, 0, 15, 0, 16, 0, 17, 0, 18, 6, 19, 2, 20, 9, 43, 9, 21, 5, 0, 2, 0, 8, 29, -1, 32, 2, 0, 4, 2, 9, 5, 10, 5, 11, 6, 39, 15, 40, 15, 41, 19, 42, 19, 12, 19, 13, 19, 14, 0, 15, 0, 16, 0, 17, 0, 18, 2, 19, 2, 20, 9, 21, 5, 22, 10, 23, 5, 24, 5, 25, 5, 26, 10, 27, 6, 28, 6, 29, 20, 30, 12, 31, 12, 32, 6, 33, 6, 34, 13, 0, 0, 0, 36, 44, -1, 22, 2, 0, 4, 6, 9, 5, 10, 5, 11, 6, 37, 14, 38, 15, 39, 14, 40, 15, 41, 21, 42, 22, 12, 23, 13, 24, 14, 0, 15, 0, 16, 0, 17, 0, 18, 6, 19, 2, 20, 9, 43, 9, 21, 5, 0, 4, 0, 8, 29, -1, 32, 2, 0, 4, 2, 9, 5, 10, 5, 11, 6, 39, 15, 40, 15, 41, 19, 42, 19, 12, 19, 13, 19, 14, 0, 15, 0, 16, 0, 17, 0, 18, 2, 19, 2, 20, 9, 21, 5, 22, 10, 23, 5, 24, 5, 25, 25, 26, 10, 27, 6, 28, 6, 29, 26, 30, 12, 31, 12, 32, 2, 33, 6, 34, 13, 0 </int_array>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

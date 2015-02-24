@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="11" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="./coin.gd" type="Script"></ext_resource>
 	<ext_resource path="res://entities/common/shine.png" type="Texture"></ext_resource>
-	<ext_resource path="./sound_coin.wav" type="Sample"></ext_resource>
+	<ext_resource path="res://entities/collectibles/coin/sound_coin.wav" type="Sample"></ext_resource>
+	<ext_resource path="res://entities/collectibles/coin/coin.gd" type="Script"></ext_resource>
 	<resource type="SphereShape" path="local://1">
 		<real name="radius"> 0.312546 </real>
 
@@ -73,6 +73,29 @@
 
 	</resource>
 	<resource type="Animation" path="local://4">
+		<string name="resource/name"> "spin" </string>
+		<real name="length"> 2 </real>
+		<bool name="loop"> True </bool>
+		<real name="step"> 0.1 </real>
+		<string name="tracks/0/type"> "value" </string>
+		<node_path name="tracks/0/path"> "Circle:transform/rotation" </node_path>
+		<int name="tracks/0/interp"> 1 </int>
+		<dictionary name="tracks/0/keys" shared="false">
+			<string> "cont" </string>
+			<bool> True </bool>
+			<string> "transitions" </string>
+			<real_array  len="2"> 				1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="2" shared="false">
+				<vector3> -90, 0, 0 </vector3>
+				<vector3> -90, 0, -360 </vector3>
+			</array>
+			<string> "times" </string>
+			<real_array  len="2"> 				0, 2 </real_array>
+		</dictionary>
+
+	</resource>
+	<resource type="Animation" path="local://5">
 		<real name="length"> 1 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -124,29 +147,6 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://5">
-		<string name="resource/name"> "spin" </string>
-		<real name="length"> 2 </real>
-		<bool name="loop"> True </bool>
-		<real name="step"> 0.1 </real>
-		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> "Circle:transform/rotation" </node_path>
-		<int name="tracks/0/interp"> 1 </int>
-		<dictionary name="tracks/0/keys" shared="false">
-			<string> "cont" </string>
-			<bool> True </bool>
-			<string> "transitions" </string>
-			<real_array  len="2"> 				1, 1 </real_array>
-			<string> "values" </string>
-			<array  len="2" shared="false">
-				<vector3> -90, 0, 0 </vector3>
-				<vector3> -90, 0, -360 </vector3>
-			</array>
-			<string> "times" </string>
-			<real_array  len="2"> 				0, 2 </real_array>
-		</dictionary>
-
-	</resource>
 	<resource type="ParticleSystemMaterial" path="local://6">
 		<bool name="flags/visible"> True </bool>
 		<bool name="flags/double_sided"> True </bool>
@@ -168,7 +168,7 @@
 			<string> "pitch" </string>
 			<real> 1 </real>
 			<string> "sample" </string>
-			<resource  resource_type="Sample" path="./sound_coin.wav">  </resource>
+			<resource  resource_type="Sample" path="res://entities/collectibles/coin/sound_coin.wav">  </resource>
 		</dictionary>
 
 	</resource>
@@ -219,8 +219,8 @@
 				<string> "playback/process_mode" </string>
 				<string> "playback/default_blend_time" </string>
 				<string> "root/root" </string>
-				<string> "anims/take" </string>
 				<string> "anims/spin" </string>
+				<string> "anims/take" </string>
 				<string> "playback/active" </string>
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
@@ -315,17 +315,18 @@
 				<real> 9.8 </real>
 				<real> 0.1 </real>
 				<real> 0 </real>
-				<resource  resource_type="Script" path="./coin.gd">  </resource>
+				<resource  resource_type="Script" path="res://entities/collectibles/coin/coin.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
-							<array  len="1" shared="false">
-								<string> "./coin.gd" </string>
+							<array  len="2" shared="false">
+								<string> "res://entities/collectibles/coin/coin.gd" </string>
+								<string> "res://entities/trigger/trigger.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -442,7 +443,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<transform> 0.0380254, 0.196352, 0, 8.58281e-09, -1.66214e-09, 0.2, 0.196352, -0.0380254, -8.74228e-09, 0.00550658, 0.532125, 0.000651598 </transform>
 				<resource name=""></resource>				<resource  resource_type="Mesh" path="local://3">  </resource>

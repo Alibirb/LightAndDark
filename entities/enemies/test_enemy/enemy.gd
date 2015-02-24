@@ -1,5 +1,6 @@
 
-extends RigidBody
+#extends RigidBody
+extends "res://entities/enemies/common/enemy_base.gd"
 
 # member variables here, example:
 # var a=2
@@ -19,8 +20,6 @@ var rot_speed = 1
 var dying=false
 
 func _integrate_forces(state):
-
-
 	
 	var delta = state.get_step()
 	var lv = state.get_linear_velocity()
@@ -38,20 +37,19 @@ func _integrate_forces(state):
 		var dp = state.get_contact_local_normal(i)
 	
 		if (cc):
-			if (cc extends preload("res://entities/players/player_standin/bullet.gd") and not cc.disabled):
+			if (cc extends preload("res://entities/players/player_standin/spear.gd") and not cc.disabled ):
 				set_mode(MODE_RIGID)
 				dying=true
-				#lv=s.get_contact_local_normal(i)*400  
+				alive = false
+				#lv=s.get_contact_local_normal(i)*400
 				state.set_angular_velocity( -dp.cross(up).normalized() *33.0)
 				get_node("AnimationPlayer").play("impact")
 				get_node("AnimationPlayer").queue("explode")
 				set_friction(true)
-				cc.disabled=true
+				cc.disabled = true
 				get_node("sound").play("hit")
 				return
 
-	
- 		
 	
 
 	var col_floor = get_node("Armature/ray_floor").is_colliding()
